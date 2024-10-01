@@ -1,9 +1,9 @@
 services:
   nntp-router:
-    image: ghcr.io/rexjohannes/nntp-router:latest
+    image: ghcr.io/rexjohannes/nntp-router-lite:main
     container_name: nntp-router
     volumes:
       - ./authfile:/app/authfile
-    command: ["--your-cli-arg1", "--your-cli-arg2"]
+    command: ["tcp:2119", "ssl://user:pass@news.usenet.farm:563", "0", "0", "40", "*", "authfile", "4"]
     ports:
       - "2119:2119"
