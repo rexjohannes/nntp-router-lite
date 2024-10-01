@@ -1,0 +1,9 @@
+services:
+  nntp-router:
+    image: ghcr.io/rexjohannes/nntp-router:latest
+    container_name: nntp-router
+    volumes:
+      - ./authfile:/app/authfile
+    command: ["--your-cli-arg1", "--your-cli-arg2"]
+    ports:
+      - "2119:2119"
